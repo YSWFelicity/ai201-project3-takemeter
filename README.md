@@ -10,6 +10,8 @@ basketball content* they carry — not whether the opinion is correct.
 | `hot_take` | A strong/contrarian/exaggerated claim asserted as fact with **little or no support**. |
 | `reaction` | A primarily **emotional or expressive** response (venting, joking, mocking) with no real argumentative claim. |
 
+**📹 [Demo video](https://drive.google.com/file/d/1rd2nKymNFA-tSi5m4oWRR2AF7yH70UnF/view?usp=sharing)** — walkthrough of the fine-tuned model classifying posts and the evaluation report.
+
 Full label definitions, edge-case rules, data-collection plan, evaluation
 metrics, and the definition of success live in [`planning.md`](planning.md).
 This README covers the things that document doesn't: how to run the project, the
