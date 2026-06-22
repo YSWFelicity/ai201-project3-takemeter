@@ -131,8 +131,10 @@ and `hot_take`; live game threads yield `reaction`).
 
 **Target volume.** At least 200 labeled comments, aiming for a **roughly balanced
 ~1/3 per label** so that no class is starved during fine-tuning and per-class
-metrics are meaningful. *(Current dataset: 207 comments — analysis 70, hot_take
-70, reaction 67.)*
+metrics are meaningful. *(Final dataset used in the authoritative run: **210
+comments**, perfectly balanced — analysis 70, hot_take 70, reaction 70. The
+committed `data/takemeter_nba_labeled.csv` is an earlier 207-row snapshot with
+reaction 67; the last 3 reaction comments were added to reach exact balance.)*
 
 **Splits.** Stratified by label into **train / validation / test (~70 / 15 / 15)**
 so every split preserves the class balance and the test set is never seen during
