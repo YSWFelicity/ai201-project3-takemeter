@@ -1,0 +1,322 @@
+[
+  {
+    "text": "\"NBA is the most competitive it's ever been, awesome!\" \"The elite players can't make it to finals year after year, they are frauds!!!\"",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.37,
+    "p_analysis": 0.37,
+    "p_hot_take": 0.325,
+    "p_reaction": 0.304,
+    "correct": false
+  },
+  {
+    "text": "im just happy that lebron's goat status is not being in the media now 24/7 lol",
+    "true": "reaction",
+    "pred": "analysis",
+    "conf": 0.342,
+    "p_analysis": 0.342,
+    "p_hot_take": 0.326,
+    "p_reaction": 0.332,
+    "correct": false
+  },
+  {
+    "text": "Poor efficiency? Player with \"the biggest gravity in the world\" wasnt much better lmao",
+    "true": "reaction",
+    "pred": "reaction",
+    "conf": 0.344,
+    "p_analysis": 0.334,
+    "p_hot_take": 0.322,
+    "p_reaction": 0.344,
+    "correct": true
+  },
+  {
+    "text": "I mean\u2026 were Jokic defending Caruso the way Caruso was defending Jokic, he would have picked up 6 fouls by halftime. Just because a guy is smaller doesn\u2019t mean he should be able to smack the shit out of a bigger guy all game long. Also Jokic was backing him down a bunch back in game 2 but got called for 5 offensive fouls in that game. 1-2 of them were on illegal screens, but at least a few of them were him backing down a smaller guy in the post. I\u2019m not suggesting it\u2019s the reason we lost. But I refuse to believe Alex fucking Caruso is the only guy who can lock Jokic up",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.429,
+    "p_analysis": 0.429,
+    "p_hot_take": 0.303,
+    "p_reaction": 0.269,
+    "correct": true
+  },
+  {
+    "text": "Every other player: FLOPPER Jokic: wow it was so smart of him to exaggerate the contact, the refs hate him / well, okay, there was no contact on that play BUT did you see the play three minutes ago? it was so smart of him to get that call as justice for that play He had even the commentators saying that shit this series",
+    "true": "reaction",
+    "pred": "analysis",
+    "conf": 0.395,
+    "p_analysis": 0.395,
+    "p_hot_take": 0.32,
+    "p_reaction": 0.285,
+    "correct": false
+  },
+  {
+    "text": "Thunder. That 2015 Warriors team is extremely overrated. They played like trash against a HORRENDOUS Cavs team.",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.367,
+    "p_analysis": 0.367,
+    "p_hot_take": 0.322,
+    "p_reaction": 0.311,
+    "correct": false
+  },
+  {
+    "text": "The entire lakers 3peat and the 2 championships with kobe/pau was using the triangle against zones?? Same with kerr's championships The triangle works against any and all defenses because it demands perfect/great spacing at all times along with smart and constant movement. The point is that it forces the defense into making tough decisions that the offense knows better than they do",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.423,
+    "p_analysis": 0.423,
+    "p_hot_take": 0.307,
+    "p_reaction": 0.27,
+    "correct": true
+  },
+  {
+    "text": "I love being a fraud and fake number one seed and can't wait to get swept by the wolves with my star player having 50 FTA",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.349,
+    "p_analysis": 0.349,
+    "p_hot_take": 0.332,
+    "p_reaction": 0.319,
+    "correct": false
+  },
+  {
+    "text": "6'5\" Caruso clamped the alleged \"the best player in the world\" and \"best offensive center of all time\" Jokic. Let us never forget this.",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.392,
+    "p_analysis": 0.392,
+    "p_hot_take": 0.32,
+    "p_reaction": 0.288,
+    "correct": false
+  },
+  {
+    "text": "How is that not an offensive foul on Wallace there? Jokic went up and Cason scored this is ridiculous OKC are frauds and dirty smh",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.398,
+    "p_analysis": 0.398,
+    "p_hot_take": 0.323,
+    "p_reaction": 0.28,
+    "correct": false
+  },
+  {
+    "text": "its not that other players weren't good, its that he had maybe 4 or 5 other players to depend on and no depth beyond that. If Jokic himself or one of those playable dudes were cold/off/hurt/etc. then the relative impact on the nuggets was heavier than on OKC, coupled with the fact that OKC has elite players on offense and elite players on defense with a sizable rotation of players (i think there were like 4 or more starting lineups in the regular season for OKC) while SGA is the head of all that.",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.442,
+    "p_analysis": 0.442,
+    "p_hot_take": 0.297,
+    "p_reaction": 0.261,
+    "correct": true
+  },
+  {
+    "text": "Typical outcome. If OKC lost they would have been frauds, and now they are only winning because of the refs.",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.348,
+    "p_analysis": 0.348,
+    "p_hot_take": 0.33,
+    "p_reaction": 0.322,
+    "correct": false
+  },
+  {
+    "text": "Idk why they\u2019d blame the refs when Jokic\u2019s teammates are right there to crucify lol",
+    "true": "reaction",
+    "pred": "analysis",
+    "conf": 0.35,
+    "p_analysis": 0.35,
+    "p_hot_take": 0.336,
+    "p_reaction": 0.313,
+    "correct": false
+  },
+  {
+    "text": "What is this 5 guard lineup lmao?",
+    "true": "reaction",
+    "pred": "hot_take",
+    "conf": 0.343,
+    "p_analysis": 0.327,
+    "p_hot_take": 0.343,
+    "p_reaction": 0.33,
+    "correct": false
+  },
+  {
+    "text": "Even folks who think Jokic should be MVP (myself included) don't typically see Shai as a 'fraud' MVP. It's very clear that both Jokic and Shai had MVP years this seasons.",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.424,
+    "p_analysis": 0.424,
+    "p_hot_take": 0.304,
+    "p_reaction": 0.273,
+    "correct": false
+  },
+  {
+    "text": "Pretty close outside Jokic lmao",
+    "true": "reaction",
+    "pred": "reaction",
+    "conf": 0.349,
+    "p_analysis": 0.315,
+    "p_hot_take": 0.336,
+    "p_reaction": 0.349,
+    "correct": true
+  },
+  {
+    "text": "Fewer assists, more turnovers, worse defense, worse efficiency, worse scoring Had literally his two worst games of the season in games 2 and 3 and only took 9 shots in the close out game. I guess the rebounding was good.",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.405,
+    "p_analysis": 0.405,
+    "p_hot_take": 0.307,
+    "p_reaction": 0.288,
+    "correct": true
+  },
+  {
+    "text": "Yes, I have it in the same category as all of those. He averaged around 30/13/10 on 66% True Shooting. To put that into perspective, that's like scoring at the volume Kobe scored at, with the rebounding of Tim Duncan, the assist numbers of Chris Paul, and the efficiency of peak Steph Curry. All in one player. He literally averaged a 30 point triple double. Jokic this season: \\- #1 in efficiency (amongst players who average at least 15 a game) \\- #2 in assists \\- #3 in rebounds \\- #3 in points",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.432,
+    "p_analysis": 0.432,
+    "p_hot_take": 0.301,
+    "p_reaction": 0.268,
+    "correct": true
+  },
+  {
+    "text": "Dallas doesn't need more defense. They need an offensive PG who's great distributor. Losing one of their few remaining shooters would also be a huge issue. They're already going to have spacing issues but you get rid of Klay and they basically have 0 volume 3 pt shooters and unlike the one team that can kind of make that work (thpugh MPJ is one in the regular season) they don't have a Jokic (was going to say distributor but Jokic is one of one so other drop ins don't really work)",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.436,
+    "p_analysis": 0.436,
+    "p_hot_take": 0.294,
+    "p_reaction": 0.27,
+    "correct": true
+  },
+  {
+    "text": "Realest comment. I been saying this same shit. Jokic stats are inflated from playing in this era where there's few dominant big men. He's also a one-way player unlike most of the actual all-time greats. No actual Top 5 center of all time is getting locked up by 6'5\" Caruso, but supposed current \"best player in the world\" and \"best offensive center/player of all time\" Jokic (7 feet tall, no injuries, in his prime) got locked up in an elimination game? Make it make sense. He's just overhyped because he's the Great White Hope. No other possible explanation why he gets glazed so hard.",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.442,
+    "p_analysis": 0.442,
+    "p_hot_take": 0.292,
+    "p_reaction": 0.265,
+    "correct": true
+  },
+  {
+    "text": "Nuggets fans always blame the refs. Look at the top post in their sub.",
+    "true": "reaction",
+    "pred": "analysis",
+    "conf": 0.359,
+    "p_analysis": 0.359,
+    "p_hot_take": 0.336,
+    "p_reaction": 0.304,
+    "correct": false
+  },
+  {
+    "text": "Braun is not worth $30m lmao",
+    "true": "reaction",
+    "pred": "analysis",
+    "conf": 0.344,
+    "p_analysis": 0.344,
+    "p_hot_take": 0.331,
+    "p_reaction": 0.324,
+    "correct": false
+  },
+  {
+    "text": "Yup. Brook is not completely unplayable in playoffs, Pacers are just an all-time offensive team and the worst matchup for him of anybody in the league. *(He has been exposed even as the prime bucks version of himself before by other playoff teams tho) He can definitely be effective against teams that don\u2019t have a knockdown stretch 5, lightning pace, or wings/guards that can drag him into an iso on the perimeter and then blow by for easy paint touches. The better your perimeter/poa defense is, the more playable + effective Brook will be. Would be a great pickup for Warriors.",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.44,
+    "p_analysis": 0.44,
+    "p_hot_take": 0.293,
+    "p_reaction": 0.267,
+    "correct": true
+  },
+  {
+    "text": "Westbrook has never achieved this level of efficiency that SGA has lol",
+    "true": "reaction",
+    "pred": "analysis",
+    "conf": 0.348,
+    "p_analysis": 0.348,
+    "p_hot_take": 0.326,
+    "p_reaction": 0.326,
+    "correct": false
+  },
+  {
+    "text": "Playoff Jimmy isn't a thing and it got exposed this series",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.347,
+    "p_analysis": 0.347,
+    "p_hot_take": 0.343,
+    "p_reaction": 0.31,
+    "correct": false
+  },
+  {
+    "text": "Nico Harrison gonna trade Flagg for a soon-to-be washed superstar and Mavs fans gonna still talk about Jokic like Luka is on their team fighting for another MVP title",
+    "true": "hot_take",
+    "pred": "analysis",
+    "conf": 0.391,
+    "p_analysis": 0.391,
+    "p_hot_take": 0.321,
+    "p_reaction": 0.288,
+    "correct": false
+  },
+  {
+    "text": "Thunder are frauds Wolves in 4!! I am very nervous",
+    "true": "hot_take",
+    "pred": "hot_take",
+    "conf": 0.345,
+    "p_analysis": 0.313,
+    "p_hot_take": 0.345,
+    "p_reaction": 0.342,
+    "correct": true
+  },
+  {
+    "text": "WOW. FLAGRANT? LOOOOOOL this shit is so fucked",
+    "true": "reaction",
+    "pred": "reaction",
+    "conf": 0.347,
+    "p_analysis": 0.322,
+    "p_hot_take": 0.332,
+    "p_reaction": 0.347,
+    "correct": true
+  },
+  {
+    "text": "I never said he was better than MJ and Bron. However, for offense only, there's an argument. Great rebounder, elite efficiency, can score from anywhere, and an elite passer. If Jokic was also an elite defender, he'd be in the goat convo versus just the top 10 all time convo.",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.431,
+    "p_analysis": 0.431,
+    "p_hot_take": 0.304,
+    "p_reaction": 0.265,
+    "correct": true
+  },
+  {
+    "text": "It's funny you mentioned that! I've had multiple people at my restaurant that said the exact same thing. \"Terrible show and she's mentally gone.\" Table 42 lol",
+    "true": "hot_take",
+    "pred": "reaction",
+    "conf": 0.351,
+    "p_analysis": 0.316,
+    "p_hot_take": 0.332,
+    "p_reaction": 0.351,
+    "correct": false
+  },
+  {
+    "text": "It\u2019s not about the individual matchup, it\u2019s about the team defense. Caruso couldn\u2019t guard Jokic 1v1, but he can be effective as the primary defender if Chet is there to help. And Randle is good, but Caruso, JDub, Dort, Hartenstein, JWill, even Cason in bursts will be able to matchup with him, depending on the scheme",
+    "true": "analysis",
+    "pred": "analysis",
+    "conf": 0.422,
+    "p_analysis": 0.422,
+    "p_hot_take": 0.309,
+    "p_reaction": 0.269,
+    "correct": true
+  },
+  {
+    "text": "Didn't the state of Oklahoma just mandate public schools to teach about \"2020 election fraud\" conspiracies lol?",
+    "true": "reaction",
+    "pred": "hot_take",
+    "conf": 0.334,
+    "p_analysis": 0.333,
+    "p_hot_take": 0.334,
+    "p_reaction": 0.333,
+    "correct": false
+  }
+]
