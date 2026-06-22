@@ -21,9 +21,11 @@ baseline reflection, and the AI-usage disclosure.
 
 ```
 .
-├── ai201_project3_takemeter_starter_clean.ipynb   # the Colab notebook (§1–§5)
+├── ai201_project3_takemeter_starter_clean.ipynb   # the Colab notebook (§1–§6)
 ├── data/
 │   └── takemeter_nba_labeled.csv                  # 207 labeled r/nba comments
+├── confusion_matrix.png                           # fine-tuned model, test set (§4)
+├── evaluation_results.json                        # baseline vs fine-tuned summary (§6)
 ├── planning.md                                    # task design, labels, edge cases, metrics
 └── README.md                                      # this file
 ```
@@ -40,7 +42,7 @@ to ~1/3 per class (analysis 70, hot_take 70, reaction 67). Columns:
 | `comment_id` | Reddit comment ID |
 
 The notebook splits this **stratified 70 / 15 / 15** (train ≈ 145, val ≈ 31,
-test ≈ 31) with `random_state=42`, so the test set is fixed and never seen during
+test = 32) with `random_state=42`, so the test set is fixed and never seen during
 training or tuning.
 
 ---
@@ -77,7 +79,7 @@ Groq API key.
 > against the actual baseline confusion matrix once §5 has been run.
 
 **Baseline:** Groq `llama-3.3-70b-versatile`, zero-shot, on the locked 31-example
-test set, prompted with the exact §2 definitions and §3 decision rules.
+test set (32 examples), prompted with the exact §2 definitions and §3 decision rules.
 
 ### Where I expect the baseline to struggle
 
@@ -118,25 +120,94 @@ boundaries**, in this priority order:
 
 ---
 
-## Evaluation (to be filled in after running)
+## Evaluation (results)
 
-Metrics and rationale are defined in `planning.md` §5–§6. Record results here:
+Metrics and rationale are defined in `planning.md` §5–§6. Evaluated on the locked
+**32-example** test set (`evaluation_results.json`, `confusion_matrix.png`).
 
 | Model | Accuracy | Macro-F1 | `analysis` F1 | `hot_take` F1 | `reaction` F1 |
 |---|---|---|---|---|---|
-| Zero-shot baseline (Groq) | _TBD_ | _TBD_ | _TBD_ | _TBD_ | _TBD_ |
-| Fine-tuned DistilBERT | _TBD_ | _TBD_ | _TBD_ | _TBD_ | _TBD_ |
+| Zero-shot baseline (Groq `llama-3.3-70b-versatile`) | **0.719** | — | — | — | — |
+| Fine-tuned DistilBERT | **0.500** | 0.463 | 0.606 | 0.250 | 0.533 |
 
-**Success criteria (from §6), marked hit/miss after evaluation:**
-- [ ] Macro-F1 ≥ 0.75 and every per-class F1 ≥ 0.65
-- [ ] Fine-tuned beats baseline by ≥ 0.05 macro-F1 on the same test set
-- [ ] ≥ 70% of errors fall on adjacent boundaries; `analysis`↔`reaction` ≤ 10%
-- [ ] `analysis` precision ≥ 0.80 (deployment bar)
+> Note: `evaluation_results.json` only exported **accuracy** for the baseline, so
+> the baseline per-class F1 / macro-F1 cells above are left blank rather than
+> guessed. The fine-tuned per-class numbers are computed directly from
+> `confusion_matrix.png`. Re-run §5–§6 if you want the baseline breakdown written
+> out as well.
 
-_Unparseable baseline responses:_ ___ / 31. _(Revise the prompt if > ~10%.)_
+**Headline: fine-tuning *regressed*.** Accuracy fell from 71.9% (baseline) to 50.0%
+(fine-tuned), an improvement of **−0.219**. This is the opposite of the §6 success
+target and is the most important result to explain (below).
 
-_Confirmed vs. refuted hypotheses:_ (write up after comparing to the baseline
-confusion matrix — note which predictions above held.)
+### Fine-tuned confusion matrix (test set)
+
+Rows = true label, columns = predicted label. Diagonal = correct.
+
+| true \ pred | analysis | hot_take | reaction |
+|---|---|---|---|
+| **analysis** | **10** | 0 | 0 |
+| **hot_take** | 9 | **2** | 0 |
+| **reaction** | 4 | 3 | **4** |
+
+The model **collapsed toward `analysis`**: it predicted `analysis` for 23 of 32
+inputs (`analysis` recall = 1.00 but precision = 0.43). `hot_take` is almost never
+predicted (recall 0.18). This is a degenerate small-data fine-tune — DistilBERT
+latched onto a surface shortcut ("looks statty / basketball-heavy ⇒ analysis")
+rather than learning the *supported-vs-unsupported* distinction, which is exactly
+the `planning.md` §3 Edge case A / §6 shortcut the labels were designed to stress.
+
+**Success criteria (from §6):**
+- [ ] **MISS** — Macro-F1 ≥ 0.75 and every per-class F1 ≥ 0.65. *(macro-F1 = 0.46;
+  `hot_take` F1 = 0.25.)*
+- [ ] **MISS** — Fine-tuned beats baseline by ≥ 0.05 macro-F1. *(It lost 21.9 pts of
+  accuracy; fine-tuning hurt.)*
+- [x] / [ ] **PARTIAL** — ≥ 70% of errors on adjacent boundaries (**75%**, 12/16 ✓),
+  but `analysis`↔`reaction` ≤ 10% **MISS** (4/16 = **25%**).
+- [ ] **MISS** — `analysis` precision ≥ 0.80 (deployment bar). *(= 0.43.)*
+
+_Unparseable baseline responses:_ 0 / 32 (baseline accuracy 0.719 implies all 32
+parsed). _(Revise the prompt if > ~10%.)_
+
+### Confirmed vs. refuted hypotheses
+
+- **CONFIRMED (direction):** the primary failure mode is `analysis` ↔ `hot_take`,
+  and the dominant direction is `hot_take → analysis` (9 of 16 errors). The model
+  over-credits confident, stat-flavored hot takes as analysis — exactly as
+  predicted.
+- **REFUTED (magnitude / outcome):** I predicted fine-tuning would *improve*
+  macro-F1 by ≥ 0.05 by fixing this cell. Instead fine-tuning **amplified** the
+  shortcut into a near-collapse onto `analysis`, regressing accuracy by 22 points.
+- **REFUTED:** `analysis` ↔ `reaction` was predicted to stay rare (≤ 10% of
+  errors). It was **25%** (4 `reaction → analysis`), so the fine-tuned model is
+  also confusing the two *non-adjacent* classes — evidence it is using a
+  surface heuristic, not the concept.
+
+### Three wrong predictions to analyze in depth
+
+The committed artifacts don't include the misclassified comment *texts* (they print
+in §4 of the notebook). Pull three concrete rows from the §4 misclassification dump
+and paste them in, one per error pattern below:
+
+1. **`hot_take → analysis` (9 cases, the main failure).** A strong, unsupported
+   claim phrased with basketball vocabulary / a stat reference gets read as
+   well-supported. Example: _<paste a §4 row>_.
+2. **`reaction → analysis` (4 cases, the non-adjacent leak).** An expressive /
+   emotional comment with no real argued claim is still classified `analysis` —
+   the model's "basketball words ⇒ analysis" shortcut overriding intent. Example:
+   _<paste a §4 row>_.
+3. **`reaction → hot_take` (3 cases).** A venting / mocking one-liner that buries a
+   faint stance gets promoted to `hot_take` (`planning.md` §3 Edge case B). Example:
+   _<paste a §4 row>_.
+
+### What I'd change next (given the regression)
+
+The likely cause is fine-tuning a 66M-param model on ~145 training examples for 3
+epochs: too little signal, so it minimizes loss by over-predicting the easiest
+class. Concrete next steps: class-weighted loss or oversampling to counter the
+`analysis` collapse, fewer epochs with early stopping on val macro-F1, a smaller
+learning rate, and more labeled data. As it stands, the **zero-shot Groq baseline
+is the better classifier** on this task.
 
 ---
 
